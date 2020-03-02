@@ -9,3 +9,5 @@
 - `git commit ~` 내용을 꼭 담아주세요
 - `git push origin NAME`
 - github site, Pull Request : develop <- NAME
+
+- 20200302 project 시작
