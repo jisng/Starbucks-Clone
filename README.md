@@ -2,7 +2,7 @@
 i10 자체프로젝트: 스타벅스 어플 클론
 
 ## Member
-- [Jinsg](https://github.com/jisng)
+- [Jisng](https://github.com/jisng)
 - [Hailey](https://github.com/foxwavez)
 - [Jingyung](https://github.com/jingyungkim)
 
