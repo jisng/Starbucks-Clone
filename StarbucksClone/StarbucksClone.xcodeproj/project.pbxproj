@@ -1,0 +1,738 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12394E33593F40B13048FD11 /* Pods_StarbucksClone_StarbucksCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF56B98A4A4BE9A22CBE6EE /* Pods_StarbucksClone_StarbucksCloneUITests.framework */; };
+		48E7579E0F63403CC17096B7 /* Pods_StarbucksCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36761CF5A1A523AFFB767CC5 /* Pods_StarbucksCloneTests.framework */; };
+		70AC18BE240D2656005FD23D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18BD240D2656005FD23D /* AppDelegate.swift */; };
+		70AC18C2240D2656005FD23D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18C1240D2656005FD23D /* ViewController.swift */; };
+		70AC18C7240D2657005FD23D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70AC18C6240D2657005FD23D /* Assets.xcassets */; };
+		70AC18CA240D2658005FD23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70AC18C8240D2658005FD23D /* LaunchScreen.storyboard */; };
+		70AC18D5240D2658005FD23D /* StarbucksCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18D4240D2658005FD23D /* StarbucksCloneTests.swift */; };
+		70AC18E0240D2658005FD23D /* StarbucksCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18DF240D2658005FD23D /* StarbucksCloneUITests.swift */; };
+		70AC18EE240D2ABB005FD23D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */; };
+		DEC8525D423C58CDF27C5CCF /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54189B91CDA912A6F755CF1C /* Pods_StarbucksClone.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70AC18D1240D2658005FD23D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70AC18B2240D2656005FD23D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70AC18B9240D2656005FD23D;
+			remoteInfo = StarbucksClone;
+		};
+		70AC18DC240D2658005FD23D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70AC18B2240D2656005FD23D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70AC18B9240D2656005FD23D;
+			remoteInfo = StarbucksClone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E6F06E5DD2213BE77458744 /* Pods-StarbucksClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.debug.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.debug.xcconfig"; sourceTree = "<group>"; };
+		1BF56B98A4A4BE9A22CBE6EE /* Pods_StarbucksClone_StarbucksCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksClone_StarbucksCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE0B9DF444D2DF88A87AD8A /* Pods-StarbucksClone-StarbucksCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone-StarbucksCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarbucksClone-StarbucksCloneUITests/Pods-StarbucksClone-StarbucksCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		36761CF5A1A523AFFB767CC5 /* Pods_StarbucksCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54189B91CDA912A6F755CF1C /* Pods_StarbucksClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarbucksClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		548B10E4BF2E327277A5E723 /* Pods-StarbucksClone-StarbucksCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone-StarbucksCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone-StarbucksCloneUITests/Pods-StarbucksClone-StarbucksCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68074DFE5C8BB1AC1A87282A /* Pods-StarbucksCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksCloneTests.release.xcconfig"; path = "Target Support Files/Pods-StarbucksCloneTests/Pods-StarbucksCloneTests.release.xcconfig"; sourceTree = "<group>"; };
+		70AC18BA240D2656005FD23D /* StarbucksClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarbucksClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70AC18BD240D2656005FD23D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70AC18C1240D2656005FD23D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70AC18C6240D2657005FD23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70AC18C9240D2658005FD23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70AC18CB240D2658005FD23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70AC18D0240D2658005FD23D /* StarbucksCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70AC18D4240D2658005FD23D /* StarbucksCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksCloneTests.swift; sourceTree = "<group>"; };
+		70AC18D6240D2658005FD23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70AC18DB240D2658005FD23D /* StarbucksCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70AC18DF240D2658005FD23D /* StarbucksCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksCloneUITests.swift; sourceTree = "<group>"; };
+		70AC18E1240D2658005FD23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		988684AD30314B8ADDCF87AA /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
+		AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-StarbucksCloneTests/Pods-StarbucksCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70AC18B7240D2656005FD23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEC8525D423C58CDF27C5CCF /* Pods_StarbucksClone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18CD240D2658005FD23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E7579E0F63403CC17096B7 /* Pods_StarbucksCloneTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18D8240D2658005FD23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12394E33593F40B13048FD11 /* Pods_StarbucksClone_StarbucksCloneUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03F60547DC71E3AB63568776 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F06E5DD2213BE77458744 /* Pods-StarbucksClone.debug.xcconfig */,
+				988684AD30314B8ADDCF87AA /* Pods-StarbucksClone.release.xcconfig */,
+				2CE0B9DF444D2DF88A87AD8A /* Pods-StarbucksClone-StarbucksCloneUITests.debug.xcconfig */,
+				548B10E4BF2E327277A5E723 /* Pods-StarbucksClone-StarbucksCloneUITests.release.xcconfig */,
+				AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */,
+				68074DFE5C8BB1AC1A87282A /* Pods-StarbucksCloneTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70AC18B1240D2656005FD23D = {
+			isa = PBXGroup;
+			children = (
+				70AC18BC240D2656005FD23D /* StarbucksClone */,
+				70AC18D3240D2658005FD23D /* StarbucksCloneTests */,
+				70AC18DE240D2658005FD23D /* StarbucksCloneUITests */,
+				70AC18BB240D2656005FD23D /* Products */,
+				03F60547DC71E3AB63568776 /* Pods */,
+				B12E853A4CB7403B6E185B5B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70AC18BB240D2656005FD23D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70AC18BA240D2656005FD23D /* StarbucksClone.app */,
+				70AC18D0240D2658005FD23D /* StarbucksCloneTests.xctest */,
+				70AC18DB240D2658005FD23D /* StarbucksCloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70AC18BC240D2656005FD23D /* StarbucksClone */ = {
+			isa = PBXGroup;
+			children = (
+				70AC18BD240D2656005FD23D /* AppDelegate.swift */,
+				70AC18C1240D2656005FD23D /* ViewController.swift */,
+				70AC18C6240D2657005FD23D /* Assets.xcassets */,
+				70AC18C8240D2658005FD23D /* LaunchScreen.storyboard */,
+				70AC18CB240D2658005FD23D /* Info.plist */,
+				70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */,
+			);
+			path = StarbucksClone;
+			sourceTree = "<group>";
+		};
+		70AC18D3240D2658005FD23D /* StarbucksCloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				70AC18D4240D2658005FD23D /* StarbucksCloneTests.swift */,
+				70AC18D6240D2658005FD23D /* Info.plist */,
+			);
+			path = StarbucksCloneTests;
+			sourceTree = "<group>";
+		};
+		70AC18DE240D2658005FD23D /* StarbucksCloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70AC18DF240D2658005FD23D /* StarbucksCloneUITests.swift */,
+				70AC18E1240D2658005FD23D /* Info.plist */,
+			);
+			path = StarbucksCloneUITests;
+			sourceTree = "<group>";
+		};
+		B12E853A4CB7403B6E185B5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54189B91CDA912A6F755CF1C /* Pods_StarbucksClone.framework */,
+				1BF56B98A4A4BE9A22CBE6EE /* Pods_StarbucksClone_StarbucksCloneUITests.framework */,
+				36761CF5A1A523AFFB767CC5 /* Pods_StarbucksCloneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70AC18B9240D2656005FD23D /* StarbucksClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70AC18E4240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksClone" */;
+			buildPhases = (
+				AF6A06521CB9BA4BB028B951 /* [CP] Check Pods Manifest.lock */,
+				70AC18B6240D2656005FD23D /* Sources */,
+				70AC18B7240D2656005FD23D /* Frameworks */,
+				70AC18B8240D2656005FD23D /* Resources */,
+				1976B03B52C8A6B8BC93F0E7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarbucksClone;
+			productName = StarbucksClone;
+			productReference = 70AC18BA240D2656005FD23D /* StarbucksClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70AC18CF240D2658005FD23D /* StarbucksCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70AC18E7240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksCloneTests" */;
+			buildPhases = (
+				8C238BA6022A61DED6552CEE /* [CP] Check Pods Manifest.lock */,
+				70AC18CC240D2658005FD23D /* Sources */,
+				70AC18CD240D2658005FD23D /* Frameworks */,
+				70AC18CE240D2658005FD23D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70AC18D2240D2658005FD23D /* PBXTargetDependency */,
+			);
+			name = StarbucksCloneTests;
+			productName = StarbucksCloneTests;
+			productReference = 70AC18D0240D2658005FD23D /* StarbucksCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70AC18DA240D2658005FD23D /* StarbucksCloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70AC18EA240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksCloneUITests" */;
+			buildPhases = (
+				F90096518DC5A8615692FB4A /* [CP] Check Pods Manifest.lock */,
+				70AC18D7240D2658005FD23D /* Sources */,
+				70AC18D8240D2658005FD23D /* Frameworks */,
+				70AC18D9240D2658005FD23D /* Resources */,
+				A13054375254C885023C0A2D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70AC18DD240D2658005FD23D /* PBXTargetDependency */,
+			);
+			name = StarbucksCloneUITests;
+			productName = StarbucksCloneUITests;
+			productReference = 70AC18DB240D2658005FD23D /* StarbucksCloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70AC18B2240D2656005FD23D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Hailey;
+				TargetAttributes = {
+					70AC18B9240D2656005FD23D = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					70AC18CF240D2658005FD23D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 70AC18B9240D2656005FD23D;
+					};
+					70AC18DA240D2658005FD23D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 70AC18B9240D2656005FD23D;
+					};
+				};
+			};
+			buildConfigurationList = 70AC18B5240D2656005FD23D /* Build configuration list for PBXProject "StarbucksClone" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70AC18B1240D2656005FD23D;
+			productRefGroup = 70AC18BB240D2656005FD23D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70AC18B9240D2656005FD23D /* StarbucksClone */,
+				70AC18CF240D2658005FD23D /* StarbucksCloneTests */,
+				70AC18DA240D2658005FD23D /* StarbucksCloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70AC18B8240D2656005FD23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70AC18CA240D2658005FD23D /* LaunchScreen.storyboard in Resources */,
+				70AC18C7240D2657005FD23D /* Assets.xcassets in Resources */,
+				70AC18EE240D2ABB005FD23D /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18CE240D2658005FD23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18D9240D2658005FD23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1976B03B52C8A6B8BC93F0E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C238BA6022A61DED6552CEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarbucksCloneTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A13054375254C885023C0A2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone-StarbucksCloneUITests/Pods-StarbucksClone-StarbucksCloneUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone-StarbucksCloneUITests/Pods-StarbucksClone-StarbucksCloneUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarbucksClone-StarbucksCloneUITests/Pods-StarbucksClone-StarbucksCloneUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF6A06521CB9BA4BB028B951 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarbucksClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90096518DC5A8615692FB4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarbucksClone-StarbucksCloneUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70AC18B6240D2656005FD23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70AC18C2240D2656005FD23D /* ViewController.swift in Sources */,
+				70AC18BE240D2656005FD23D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18CC240D2658005FD23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70AC18D5240D2658005FD23D /* StarbucksCloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AC18D7240D2658005FD23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70AC18E0240D2658005FD23D /* StarbucksCloneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70AC18D2240D2658005FD23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70AC18B9240D2656005FD23D /* StarbucksClone */;
+			targetProxy = 70AC18D1240D2658005FD23D /* PBXContainerItemProxy */;
+		};
+		70AC18DD240D2658005FD23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70AC18B9240D2656005FD23D /* StarbucksClone */;
+			targetProxy = 70AC18DC240D2658005FD23D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70AC18C8240D2658005FD23D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70AC18C9240D2658005FD23D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70AC18E2240D2658005FD23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70AC18E3240D2658005FD23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70AC18E5240D2658005FD23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E6F06E5DD2213BE77458744 /* Pods-StarbucksClone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70AC18E6240D2658005FD23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988684AD30314B8ADDCF87AA /* Pods-StarbucksClone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70AC18E8240D2658005FD23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksCloneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarbucksClone.app/StarbucksClone";
+			};
+			name = Debug;
+		};
+		70AC18E9240D2658005FD23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68074DFE5C8BB1AC1A87282A /* Pods-StarbucksCloneTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksCloneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarbucksClone.app/StarbucksClone";
+			};
+			name = Release;
+		};
+		70AC18EB240D2658005FD23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE0B9DF444D2DF88A87AD8A /* Pods-StarbucksClone-StarbucksCloneUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksCloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksCloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StarbucksClone;
+			};
+			name = Debug;
+		};
+		70AC18EC240D2658005FD23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 548B10E4BF2E327277A5E723 /* Pods-StarbucksClone-StarbucksCloneUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JEGC4LC92;
+				INFOPLIST_FILE = StarbucksCloneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = foxwavez.identifier.StarbucksClone.StarbucksCloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StarbucksClone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70AC18B5240D2656005FD23D /* Build configuration list for PBXProject "StarbucksClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70AC18E2240D2658005FD23D /* Debug */,
+				70AC18E3240D2658005FD23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70AC18E4240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70AC18E5240D2658005FD23D /* Debug */,
+				70AC18E6240D2658005FD23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70AC18E7240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70AC18E8240D2658005FD23D /* Debug */,
+				70AC18E9240D2658005FD23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70AC18EA240D2658005FD23D /* Build configuration list for PBXNativeTarget "StarbucksCloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70AC18EB240D2658005FD23D /* Debug */,
+				70AC18EC240D2658005FD23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70AC18B2240D2656005FD23D /* Project object */;
+}

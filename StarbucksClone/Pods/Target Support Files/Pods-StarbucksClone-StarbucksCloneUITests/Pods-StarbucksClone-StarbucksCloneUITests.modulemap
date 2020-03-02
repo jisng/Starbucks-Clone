@@ -1,0 +1,6 @@
+framework module Pods_StarbucksClone_StarbucksCloneUITests {
+  umbrella header "Pods-StarbucksClone-StarbucksCloneUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

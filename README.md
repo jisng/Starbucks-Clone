@@ -15,4 +15,16 @@ i10 자체프로젝트: 스타벅스 어플 클론
 - View: 선언 -> 라이프사이클 -> `setUI()` -> `setLayout()`
 - UI Name: ~Label, ~Button
 - Button Function Name: `didTap ~`
+- Setting Fuction Name: `set ~`
 
+## Task
+#### 지승
+- 기프트샵
+- What's New
+#### 희진
+- 메인
+- 레벨
+- 카드
+#### 진경
+- 사이렌 오더
+- e-Coupon
