@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		70AC18D5240D2658005FD23D /* StarbucksCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18D4240D2658005FD23D /* StarbucksCloneTests.swift */; };
 		70AC18E0240D2658005FD23D /* StarbucksCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18DF240D2658005FD23D /* StarbucksCloneUITests.swift */; };
 		70AC18EE240D2ABB005FD23D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */; };
+		70AC18F5240E6E46005FD23D /* GiftHomeNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18EF240E6E46005FD23D /* GiftHomeNewView.swift */; };
+		70AC18F6240E6E46005FD23D /* GiftHomeBestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18F0240E6E46005FD23D /* GiftHomeBestView.swift */; };
+		70AC18F7240E6E46005FD23D /* GiftHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18F1240E6E46005FD23D /* GiftHomeBannerView.swift */; };
+		70AC18F8240E6E46005FD23D /* GiftHomeTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18F2240E6E46005FD23D /* GiftHomeTagView.swift */; };
+		70AC18F9240E6E46005FD23D /* GiftHomeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18F3240E6E46005FD23D /* GiftHomeThemeView.swift */; };
+		70AC18FA240E6E46005FD23D /* GiftHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC18F4240E6E46005FD23D /* GiftHomeView.swift */; };
 		DEC8525D423C58CDF27C5CCF /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54189B91CDA912A6F755CF1C /* Pods_StarbucksClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,12 @@
 		70AC18DF240D2658005FD23D /* StarbucksCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksCloneUITests.swift; sourceTree = "<group>"; };
 		70AC18E1240D2658005FD23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70AC18EF240E6E46005FD23D /* GiftHomeNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeNewView.swift; sourceTree = "<group>"; };
+		70AC18F0240E6E46005FD23D /* GiftHomeBestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeBestView.swift; sourceTree = "<group>"; };
+		70AC18F1240E6E46005FD23D /* GiftHomeBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeBannerView.swift; sourceTree = "<group>"; };
+		70AC18F2240E6E46005FD23D /* GiftHomeTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeTagView.swift; sourceTree = "<group>"; };
+		70AC18F3240E6E46005FD23D /* GiftHomeThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeThemeView.swift; sourceTree = "<group>"; };
+		70AC18F4240E6E46005FD23D /* GiftHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeView.swift; sourceTree = "<group>"; };
 		988684AD30314B8ADDCF87AA /* Pods-StarbucksClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksClone.release.xcconfig"; path = "Target Support Files/Pods-StarbucksClone/Pods-StarbucksClone.release.xcconfig"; sourceTree = "<group>"; };
 		AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-StarbucksCloneTests/Pods-StarbucksCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +111,6 @@
 				AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */,
 				68074DFE5C8BB1AC1A87282A /* Pods-StarbucksCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +145,12 @@
 				70AC18C8240D2658005FD23D /* LaunchScreen.storyboard */,
 				70AC18CB240D2658005FD23D /* Info.plist */,
 				70AC18ED240D2ABB005FD23D /* GoogleService-Info.plist */,
+				70AC18F1240E6E46005FD23D /* GiftHomeBannerView.swift */,
+				70AC18F0240E6E46005FD23D /* GiftHomeBestView.swift */,
+				70AC18EF240E6E46005FD23D /* GiftHomeNewView.swift */,
+				70AC18F2240E6E46005FD23D /* GiftHomeTagView.swift */,
+				70AC18F3240E6E46005FD23D /* GiftHomeThemeView.swift */,
+				70AC18F4240E6E46005FD23D /* GiftHomeView.swift */,
 			);
 			path = StarbucksClone;
 			sourceTree = "<group>";
@@ -405,8 +422,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AC18F8240E6E46005FD23D /* GiftHomeTagView.swift in Sources */,
 				70AC18C2240D2656005FD23D /* ViewController.swift in Sources */,
+				70AC18F6240E6E46005FD23D /* GiftHomeBestView.swift in Sources */,
+				70AC18FA240E6E46005FD23D /* GiftHomeView.swift in Sources */,
 				70AC18BE240D2656005FD23D /* AppDelegate.swift in Sources */,
+				70AC18F7240E6E46005FD23D /* GiftHomeBannerView.swift in Sources */,
+				70AC18F5240E6E46005FD23D /* GiftHomeNewView.swift in Sources */,
+				70AC18F9240E6E46005FD23D /* GiftHomeThemeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
