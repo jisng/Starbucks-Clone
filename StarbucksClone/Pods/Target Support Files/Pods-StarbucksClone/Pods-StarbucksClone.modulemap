@@ -1,0 +1,6 @@
+framework module Pods_StarbucksClone {
+  umbrella header "Pods-StarbucksClone-umbrella.h"
+
+  export *
+  module * { export * }
+}
