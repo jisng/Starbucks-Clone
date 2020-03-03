@@ -10,7 +10,8 @@ import UIKit
 
 class GiftHomeBannerView: UIScrollView {
     
-    lazy var model = GiftHomeBannerViewModel(view: self, banner: self.bannerButton1)
+    private var timer: Timer?
+    private var xOffSet: CGFloat = 0
     
     private let bannerButton1 = UIButton()
     private let bannerButton2 = UIButton()
@@ -20,14 +21,45 @@ class GiftHomeBannerView: UIScrollView {
         super.init(frame: frame)
         setUI()
         setLayout()
-        model.autoScroll()
+        autoScroll()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func autoScroll() {
+        if timer == nil {
+          let timer = Timer(timeInterval: 3.0,
+                            target: self,
+                            selector: #selector(timerAction),
+                            userInfo: nil,
+                            repeats: true)
+          RunLoop.current.add(timer, forMode: .common)
+          timer.tolerance = 0.1
+          
+          self.timer = timer
+        }
+    }
+    
+    @objc private func timerAction() {
+        if xOffSet != self.frame.maxX*2 {
+            xOffSet += bannerButton1.frame.maxX
+            UIView.animate(withDuration: 1, delay: 0, animations: {
+                self.contentOffset.x = self.xOffSet
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 1, delay: 0, animations: {
+                self.contentOffset.x = 0
+            }, completion: nil)
+            self.xOffSet = 0
+        }
+    }
+    
     private func setUI() {
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
+        
         [bannerButton1, bannerButton2, bannerButton3].forEach({
             $0.setImage(UIImage(named: "starbucks-logo"), for: .normal)
         })
@@ -49,6 +81,5 @@ class GiftHomeBannerView: UIScrollView {
         bannerButton2.leadingAnchor.constraint(equalTo: bannerButton1.trailingAnchor).isActive = true
         bannerButton3.leadingAnchor.constraint(equalTo: bannerButton2.trailingAnchor).isActive = true
         bannerButton3.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
     }
 }
