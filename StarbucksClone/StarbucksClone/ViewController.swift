@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let str = "테ㅔㅔㅔㅔㅔㅔㅔㅔ스트ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"
-    
     private let testView = GiftHomeTagView()
 
     override func viewDidLoad() {
