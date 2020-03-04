@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // test... 정말 무섭다
+    
     private let testView = GiftHomeTagView()
 
     override func viewDidLoad() {
