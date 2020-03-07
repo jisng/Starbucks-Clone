@@ -24,6 +24,11 @@ class GiftHomeTagView: GiftHomeTagLineView {
         super.init(frame: frame)
         setUI()
         setLayout()
+        loveButton.addTarget(self, action: #selector(loveButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc func loveButton(_ button: UIButton) {
+        print(button)
     }
     
     required init?(coder: NSCoder) {

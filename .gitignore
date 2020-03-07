@@ -1,8 +1,19 @@
 # Created by https://www.gitignore.io/api/macos,swift
 # Edit at https://www.gitignore.io/?templates=macos,swift
 
-### firebase ###
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
 GoogleService-Info.plist
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+# End of https://www.gitignore.io/api/firebase
+
 
 ### macOS ###
 # General
