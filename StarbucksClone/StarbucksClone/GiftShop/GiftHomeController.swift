@@ -10,37 +10,37 @@ import UIKit
 
 class GiftHomeController: UIViewController {
     
-    private let tableView = UITableView()
+    private let homeTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
-        tableView.rowHeight = 280
+        homeTableView.rowHeight = 280
     }
     
     private func setUI() {
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.register(BannerTableViewCell.self,
+        homeTableView.dataSource = self
+        homeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        homeTableView.register(BannerTableViewCell.self,
                            forCellReuseIdentifier: BannerTableViewCell.identifier)
-        tableView.register(TagTableViewCell.self,
+        homeTableView.register(TagTableViewCell.self,
                            forCellReuseIdentifier: TagTableViewCell.identifier)
-        tableView.register(BestTableViewCell.self,
+        homeTableView.register(BestTableViewCell.self,
                            forCellReuseIdentifier: BestTableViewCell.identifier)
-        tableView.register(ThemeTableViewCell.self,
+        homeTableView.register(ThemeTableViewCell.self,
                            forCellReuseIdentifier: ThemeTableViewCell.identifier)
-        tableView.register(NewTableViewCell.self,
+        homeTableView.register(NewTableViewCell.self,
                            forCellReuseIdentifier: NewTableViewCell.identifier)
     }
     
     private func setLayout() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.addSubview(homeTableView)
+        homeTableView.translatesAutoresizingMaskIntoConstraints = false
+        homeTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        homeTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        homeTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        homeTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
 }

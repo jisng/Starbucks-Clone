@@ -109,7 +109,7 @@ class GiftHomeBestNewView: UIView {
             case 0:
                 itemArray[idx].leadingAnchor.constraint(equalTo: itemScrollView.leadingAnchor, constant: 20).isActive = true
             case itemArray.count-1:
-                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor).isActive = true
+                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor, constant: 20).isActive = true
                 itemArray[idx].trailingAnchor.constraint(equalTo: itemScrollView.trailingAnchor).isActive = true
             default:
                 itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor, constant: 20).isActive = true

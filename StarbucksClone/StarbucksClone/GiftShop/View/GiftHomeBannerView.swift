@@ -63,6 +63,7 @@ class GiftHomeBannerView: UIScrollView {
     }
     
     private func setUI() {
+        self.isPagingEnabled = true
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         
