@@ -10,20 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // test... 정말 무섭다
-    
-    private let testView = GiftHomeTagView()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(testView)
-        testView.translatesAutoresizingMaskIntoConstraints = false
-        testView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        testView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        testView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        testView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
+        
     }
-
-
+    
 }
-
