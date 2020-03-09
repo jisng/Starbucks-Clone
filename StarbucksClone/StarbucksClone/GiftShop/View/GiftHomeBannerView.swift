@@ -24,6 +24,12 @@ class GiftHomeBannerView: UIScrollView {
         autoScroll()
     }
     
+//    override func layoutSubviews() {
+//        [bannerButton1,bannerButton2,bannerButton3].forEach({
+//            $0.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
+//        })
+//    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -57,6 +63,7 @@ class GiftHomeBannerView: UIScrollView {
     }
     
     private func setUI() {
+        self.isPagingEnabled = true
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         
@@ -75,7 +82,7 @@ class GiftHomeBannerView: UIScrollView {
             $0.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             $0.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
             $0.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-            $0.widthAnchor.constraint(equalTo: superview?.widthAnchor ?? self.widthAnchor).isActive = true
+            $0.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         })
         bannerButton1.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         bannerButton2.leadingAnchor.constraint(equalTo: bannerButton1.trailingAnchor).isActive = true
