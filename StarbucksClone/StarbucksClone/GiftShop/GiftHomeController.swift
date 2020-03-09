@@ -46,6 +46,7 @@ class GiftHomeController: UIViewController {
 }
 
 extension GiftHomeController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
