@@ -65,6 +65,7 @@ class GiftHomeBestNewView: UIView {
     private func setUI(title: String, subTitle: String) {
         titleLabel.text = title
         titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        titleLabel.textColor = .black
         
         subtitleLabel.text = subTitle
         subtitleLabel.textColor = .gray
@@ -99,7 +100,8 @@ class GiftHomeBestNewView: UIView {
         for item in itemArray {
             itemScrollView.addSubview(item)
             item.translatesAutoresizingMaskIntoConstraints = false
-            item.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.32).isActive = true
+            item.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4).isActive = true
+            item.heightAnchor.constraint(equalTo: item.widthAnchor).isActive = true
             item.topAnchor.constraint(equalTo: itemScrollView.topAnchor).isActive = true
             item.bottomAnchor.constraint(equalTo: itemScrollView.bottomAnchor).isActive = true
         }
@@ -107,12 +109,12 @@ class GiftHomeBestNewView: UIView {
         for idx in 0..<itemArray.count {
             switch idx {
             case 0:
-                itemArray[idx].leadingAnchor.constraint(equalTo: itemScrollView.leadingAnchor, constant: 20).isActive = true
+                itemArray[idx].leadingAnchor.constraint(equalTo: itemScrollView.leadingAnchor).isActive = true
             case itemArray.count-1:
-                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor, constant: 20).isActive = true
+                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor).isActive = true
                 itemArray[idx].trailingAnchor.constraint(equalTo: itemScrollView.trailingAnchor).isActive = true
             default:
-                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor, constant: 20).isActive = true
+                itemArray[idx].leadingAnchor.constraint(equalTo: itemArray[idx-1].trailingAnchor).isActive = true
             }
         }
         

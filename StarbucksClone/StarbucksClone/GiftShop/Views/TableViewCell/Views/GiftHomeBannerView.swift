@@ -34,7 +34,7 @@ class GiftHomeBannerView: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func autoScroll() {
+    private func autoScroll() {
         if timer == nil {
           let timer = Timer(timeInterval: 3.0,
                             target: self,

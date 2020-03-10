@@ -1,17 +1,19 @@
 //
-//  GiftCategoryController.swift
+//  GiftCategoryView.swift
 //  StarbucksClone
 //
-//  Created by 박지승 on 2020/03/07.
+//  Created by 박지승 on 2020/03/10.
 //  Copyright © 2020 Hailey. All rights reserved.
 //
 
 import UIKit
 
-class GiftCategoryController: UIViewController {
+class GiftCategoryView: UIView {
     
-    private let layout = UICollectionViewFlowLayout()
+    private let tagsView = GiftCategoryTagsView()
+    
     private let itemCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+    private let layout = UICollectionViewFlowLayout()
     
     var dummyData = [
         dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
@@ -25,28 +27,29 @@ class GiftCategoryController: UIViewController {
         dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
-        setLauout()
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setUI() {
-        itemCollectionView.frame = view.frame
+        
+        itemCollectionView.frame = self.frame
         itemCollectionView.collectionViewLayout = layout
         itemCollectionView.dataSource = self
         itemCollectionView.backgroundColor = .white
         
         itemCollectionView.register(CategoryCollectionViewCell.self,
                                     forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        itemCollectionView.register(TagHeaderCollectionView.self,
-                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                    withReuseIdentifier: TagHeaderCollectionView.id)
-        
+
         layout.scrollDirection = .vertical
         layout.headerReferenceSize = CGSize(width: 0,
-                                            height: view.bounds.height*0.12)
-        layout.sectionHeadersPinToVisibleBounds = true
+                                            height: self.bounds.height*0.12)
         
         let itemsInLine: CGFloat = 2
         let spacing:CGFloat = 10
@@ -62,32 +65,29 @@ class GiftCategoryController: UIViewController {
         
     }
     
-    private func setLauout() {
-        view.addSubview(itemCollectionView)
+    private func setLayout() {
+        self.addSubview(tagsView)
+        tagsView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tagsView.topAnchor.constraint(equalTo: self.topAnchor),
+            tagsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tagsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.14)
+        ])
+        
+        self.addSubview(itemCollectionView)
         itemCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            itemCollectionView.topAnchor.constraint(equalTo: guide.topAnchor),
-            itemCollectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-            itemCollectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-            itemCollectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+            itemCollectionView.topAnchor.constraint(equalTo: tagsView.bottomAnchor),
+            itemCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            itemCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            itemCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
 
-extension GiftCategoryController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: TagHeaderCollectionView.id,
-            for: indexPath) as! TagHeaderCollectionView
-        return headerView
-    }
+extension GiftCategoryView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dummyData.count
@@ -113,12 +113,9 @@ extension GiftCategoryController: UICollectionViewDataSource {
         switch indexPath.item % 2 {
         case 0:
             item.layer.addBorder(edge: .right, color: .lightGray, thickness: 1)
-        case 1:
-            item.layer.addBorder(edge: .left, color: .lightGray, thickness: 1)
         default:
             break
         }
-        
         return item
     }
     

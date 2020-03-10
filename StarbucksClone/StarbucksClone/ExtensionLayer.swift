@@ -42,6 +42,11 @@ extension CALayer {
         let border = CALayer()
         
         switch edge {
+        case .top:
+            border.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: frame.width,
+                                  height: thickness)
         case .bottom:
             border.frame = CGRect(x: 0,
                                   y: frame.height - thickness,

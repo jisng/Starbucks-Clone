@@ -48,10 +48,13 @@ class GiftHomeItemView: UIView {
             $0.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         })
         itemImageView.heightAnchor.constraint(equalTo: itemImageView.widthAnchor).isActive = true
-        itemImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+//        itemImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        itemImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
-        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 16).isActive = true
-        itemTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+//        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 16).isActive = true
+//        itemTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
+        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor).isActive = true
+        itemTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
 }
