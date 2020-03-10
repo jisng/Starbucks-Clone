@@ -35,9 +35,10 @@ class GiftDetailCollectionViewCell: UICollectionViewCell {
         itemImageView.clipsToBounds = true
         
         itemTitle.text = dummy.titleText
+        itemTitle.font = .systemFont(ofSize: 14)
         itemTitle.numberOfLines = 2
         itemTitle.lineBreakMode = .byWordWrapping
-        itemTitle.textColor = .gray
+        itemTitle.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
     
     private func setLayout() {
