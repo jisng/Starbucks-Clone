@@ -187,7 +187,8 @@ class MainViewController: UIViewController {
         case 0: // levelButton
             navigationController?.pushViewController(LevelViewController(), animated: true)
 //        case 1: // cardButton
-//        case 2: // sirenOrderButton
+        case 2: // sirenOrderButton
+            navigationController?.pushViewController(SirenOrderViewController(), animated: true)
         case 3: // giftShopButton
             navigationController?.pushViewController(GiftShopController(), animated: true)
 //        case 4: // eCouponButton
