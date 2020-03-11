@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = GiftShopController()
+        let mainVC = UINavigationController(rootViewController: MainViewController())
+        
+        mainVC.navigationBar.barStyle = .black
+        mainVC.navigationBar.backgroundColor = .black
+        mainVC.navigationBar.tintColor = .white
+        mainVC.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            
+        ]
+        
+        window?.rootViewController = mainVC
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
         
