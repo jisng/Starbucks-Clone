@@ -192,7 +192,8 @@ class MainViewController: UIViewController {
         case 3: // giftShopButton
             navigationController?.pushViewController(GiftShopController(), animated: true)
 //        case 4: // eCouponButton
-//        case 5: // whatsNewButton
+        case 5: // whatsNewButton
+            navigationController?.pushViewController(WhatsNewsViewController(), animated: true)
         default:
             break
         }
