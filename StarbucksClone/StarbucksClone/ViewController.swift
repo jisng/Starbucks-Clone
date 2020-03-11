@@ -10,18 +10,5 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let testView = GiftHomeBannerView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(testView)
-        testView.translatesAutoresizingMaskIntoConstraints = false
-        testView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        testView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        testView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        testView.bottomAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-
-
+    private let test = "git test..."
 }
-
