@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol GiftShopSelectViewDelegate: class {
+    func customMenuBar(buttonName: String)
+}
+
 class GiftShopSelectView: UIView {
+    
+    weak var delegate: GiftShopSelectViewDelegate?
     
     private let buttonStackView = UIStackView()
     private let selectLine = UILabel()
@@ -27,6 +33,7 @@ class GiftShopSelectView: UIView {
     }
     
     @objc func didTapButton(_ button: UIButton) {
+        delegate?.customMenuBar(buttonName: button.currentTitle!)
         UIView.animate(withDuration: 0.3) {
             self.lineLeading?.constant = button.frame.minX
             self.layoutIfNeeded()
@@ -52,6 +59,10 @@ class GiftShopSelectView: UIView {
         })
         
         selectLine.backgroundColor = .brown
+        
+        dump(self.parentViewController)
+//        guard let vc = self.parentViewController as? GiftShopController else { return }
+//        vc.delegate = self
     }
     
     private func setLayout() {
@@ -72,4 +83,29 @@ class GiftShopSelectView: UIView {
         lineLeading?.isActive = true
         
     }
+    
 }
+
+extension GiftShopSelectView: GiftShopControllerDelegate {
+    func movesSelectLine(offSet: CGFloat) {
+        UIView.animate(withDuration: 0.1) {
+            self.lineLeading?.constant = self.buttonStackView.bounds.minY + offSet
+            self.layoutIfNeeded()
+        }
+    }
+}
+
+
+extension UIView {
+  var parentViewController: UIViewController? {
+    var responder: UIResponder? = self
+    while let nextResponder = responder?.next {
+      responder = nextResponder
+      if let vc = nextResponder as? UIViewController {
+        return vc
+      }
+    }
+    return nil
+  }
+}
+

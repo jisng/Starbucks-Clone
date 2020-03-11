@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol GiftShopControllerDelegate: class {
+//    func moveSelectLine(offSet: Int)
+    func movesSelectLine(offSet: CGFloat)
+}
+
 class GiftShopController: UIViewController {
+    
+    weak var delegate: GiftShopControllerDelegate?
     
     private let selectView = GiftShopSelectView()
     private let scrollView = UIScrollView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -22,10 +29,15 @@ class GiftShopController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         selectView.layer.addViewBorder(edge: .bottom, color: .gray, thickness: 1)
+        
     }
     
     private func setUI() {
+        selectView.delegate = self
+        self.delegate = selectView
+        scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
@@ -46,18 +58,17 @@ class GiftShopController: UIViewController {
             homeView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
         ])
         
-        
         scrollView.addSubview(categoryView)
         categoryView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             categoryView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             categoryView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             categoryView.leadingAnchor.constraint(equalTo: homeView.trailingAnchor),
-//            categoryView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            //            categoryView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             categoryView.widthAnchor.constraint(equalTo: homeView.widthAnchor),
             categoryView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
-
+        
         scrollView.addSubview(giftBoxView)
         giftBoxView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -87,3 +98,36 @@ class GiftShopController: UIViewController {
     }
     
 }
+
+extension GiftShopController: GiftShopSelectViewDelegate {
+    func customMenuBar(buttonName: String) {
+        let contentSize = scrollView.contentSize.width/3
+        
+        switch buttonName {
+        case "홈":
+            UIView.animate(withDuration: 0.3) {
+                self.scrollView.contentOffset.x = 0
+            }
+        case "카테고리":
+            UIView.animate(withDuration: 0.3) {
+                self.scrollView.contentOffset.x = contentSize
+            }
+        case "선물함":
+            UIView.animate(withDuration: 0.3) {
+                self.scrollView.contentOffset.x = contentSize*2
+            }
+        default:
+            scrollView.contentOffset.x = 0
+        }
+    }
+}
+
+extension GiftShopController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        delegate?.moveSelectLine(offSet: Int(scrollView.contentOffset.x/view.bounds.width))
+//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.movesSelectLine(offSet: scrollView.contentOffset.x/3)
+    }
+}
+

@@ -12,7 +12,7 @@ class GiftCategoryTagsView: UIView {
     
     var filterName = "인기순"
     
-    private let tags = ["추천", "전체", "Love", "응원", "생일", "감사", "1-2만원대선물", "우정", "결혼", "출산/돌", "파티"]
+    let tags = ["추천", "전체", "Love", "응원", "생일", "감사", "1-2만원대선물", "우정", "결혼", "출산/돌", "파티"]
     
     private let tagScrollView = UIScrollView()
     
@@ -28,7 +28,7 @@ class GiftCategoryTagsView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        tagScrollView.layer.addViewBorder(edge: .bottom, color: .gray, thickness: 1)
+        filterView.layer.addViewBorder(edge: .top, color: .gray, thickness: 1)
     }
     
     required init?(coder: NSCoder) {

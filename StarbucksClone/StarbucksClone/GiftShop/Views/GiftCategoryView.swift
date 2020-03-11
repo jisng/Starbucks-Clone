@@ -11,7 +11,8 @@ import UIKit
 class GiftCategoryView: UIView {
     
     private let tagsView = GiftCategoryTagsView()
-    private let itemCollectionView = GiftCategoryCollectionView()
+    private let itemsScrollView = UIScrollView()
+    private var collectionViews = [GiftCategoryCollectionView]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +24,41 @@ class GiftCategoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setUI() {
+    override func layoutSubviews() {
+        for v in collectionViews {
+            itemsScrollView.addSubview(v)
+            v.translatesAutoresizingMaskIntoConstraints = false
+            v.topAnchor.constraint(equalTo: itemsScrollView.topAnchor).isActive = true
+            v.bottomAnchor.constraint(equalTo: itemsScrollView.bottomAnchor).isActive = true
+            v.widthAnchor.constraint(equalTo: tagsView.widthAnchor).isActive = true
+            v.heightAnchor.constraint(equalTo: itemsScrollView.heightAnchor).isActive = true
+            
+        }
         
+        for idx in 0..<collectionViews.count {
+            switch idx {
+            case 0:
+                collectionViews[idx].leadingAnchor.constraint(equalTo: itemsScrollView.leadingAnchor).isActive = true
+            case collectionViews.count-1:
+                collectionViews[idx].trailingAnchor.constraint(equalTo: itemsScrollView.trailingAnchor).isActive = true
+                fallthrough
+            default:
+                collectionViews[idx].leadingAnchor.constraint(equalTo: collectionViews[idx-1].trailingAnchor).isActive = true
+            }
+        }
+    }
+    
+    private func setCollectionItem() {
+        
+    }
+    
+    private func setUI() {
+        itemsScrollView.isPagingEnabled = true
+        
+        for _ in 0..<tagsView.tags.count {
+            let collectionView = GiftCategoryCollectionView()
+            collectionViews.append(collectionView)
+        }
     }
     
     private func setLayout() {
@@ -37,14 +71,14 @@ class GiftCategoryView: UIView {
             tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.14)
         ])
         
-        self.addSubview(itemCollectionView)
-        itemCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(itemsScrollView)
+        itemsScrollView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            itemCollectionView.topAnchor.constraint(equalTo: tagsView.bottomAnchor),
-            itemCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            itemCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            itemCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            itemsScrollView.topAnchor.constraint(equalTo: tagsView.bottomAnchor),
+            itemsScrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            itemsScrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            itemsScrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
