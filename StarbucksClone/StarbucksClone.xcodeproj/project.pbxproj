@@ -37,6 +37,8 @@
 		A62D95522418941F006F1722 /* GiftCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D953D2418941F006F1722 /* GiftCategoryView.swift */; };
 		A62D95532418941F006F1722 /* GiftHomeTagLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D953E2418941F006F1722 /* GiftHomeTagLineView.swift */; };
 		A62D95542418941F006F1722 /* GiftBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D953F2418941F006F1722 /* GiftBoxView.swift */; };
+		A62D9556241897EE006F1722 /* GiftThemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D9555241897EE006F1722 /* GiftThemeDetailViewController.swift */; };
+		A62D955A2418A2CB006F1722 /* GiftCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62D95592418A2CB006F1722 /* GiftCategoryCollectionView.swift */; };
 		A6752B25240FADDF005DA068 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6752B24240FADDF005DA068 /* GoogleService-Info.plist */; };
 		DEC8525D423C58CDF27C5CCF /* Pods_StarbucksClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54189B91CDA912A6F755CF1C /* Pods_StarbucksClone.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		A62D953D2418941F006F1722 /* GiftCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCategoryView.swift; sourceTree = "<group>"; };
 		A62D953E2418941F006F1722 /* GiftHomeTagLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftHomeTagLineView.swift; sourceTree = "<group>"; };
 		A62D953F2418941F006F1722 /* GiftBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftBoxView.swift; sourceTree = "<group>"; };
+		A62D9555241897EE006F1722 /* GiftThemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftThemeDetailViewController.swift; sourceTree = "<group>"; };
+		A62D95592418A2CB006F1722 /* GiftCategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCategoryCollectionView.swift; sourceTree = "<group>"; };
 		A6752B24240FADDF005DA068 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB42CFB2877982C3128C0357 /* Pods-StarbucksCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarbucksCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-StarbucksCloneTests/Pods-StarbucksCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +210,7 @@
 			children = (
 				A62D95282418941F006F1722 /* GiftShopController.swift */,
 				A62D95292418941F006F1722 /* GiftItemDetailViewController.swift */,
+				A62D9555241897EE006F1722 /* GiftThemeDetailViewController.swift */,
 				A62D952A2418941F006F1722 /* Views */,
 			);
 			path = GiftShop;
@@ -226,6 +231,7 @@
 				A62D953B2418941F006F1722 /* GiftHomeTagView.swift */,
 				A62D953C2418941F006F1722 /* GiftHomeItemView.swift */,
 				A62D953D2418941F006F1722 /* GiftCategoryView.swift */,
+				A62D95592418A2CB006F1722 /* GiftCategoryCollectionView.swift */,
 				A62D953E2418941F006F1722 /* GiftHomeTagLineView.swift */,
 				A62D953F2418941F006F1722 /* GiftBoxView.swift */,
 			);
@@ -502,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62D9556241897EE006F1722 /* GiftThemeDetailViewController.swift in Sources */,
 				A62D95402418941F006F1722 /* GiftShopController.swift in Sources */,
 				A62D95542418941F006F1722 /* GiftBoxView.swift in Sources */,
 				A62D95512418941F006F1722 /* GiftHomeItemView.swift in Sources */,
@@ -519,6 +526,7 @@
 				A62D95412418941F006F1722 /* GiftItemDetailViewController.swift in Sources */,
 				A62D95492418941F006F1722 /* GiftHomeBestNewView.swift in Sources */,
 				A62D954A2418941F006F1722 /* ThemeTableViewCell.swift in Sources */,
+				A62D955A2418A2CB006F1722 /* GiftCategoryCollectionView.swift in Sources */,
 				A62D95472418941F006F1722 /* GiftHomeView.swift in Sources */,
 				A62D954B2418941F006F1722 /* BestTableViewCell.swift in Sources */,
 				A62D954C2418941F006F1722 /* NewTableViewCell.swift in Sources */,
