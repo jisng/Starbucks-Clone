@@ -10,10 +10,20 @@ import UIKit
 
 class GiftThemeDetailViewController: UIViewController {
     
-    private let mainImageView = UIImageView()
+    private let mainImageView: UIImageView
     
-    private let itemCollectionView = GiftCategoryCollectionView()
-
+    private let itemCollectionView: GiftCategoryCollectionView
+    
+//    init(imageName: String) {
+//        mainImageView.image = UIImage(named: imageName)
+//
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
