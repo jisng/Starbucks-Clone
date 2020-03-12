@@ -26,15 +26,19 @@ class GiftHomeTagView: GiftHomeTagLineView {
         setLayout()
     }
     
-    @objc func didTapButton (_ button: UIButton) {
+    @objc func didTapButton (_ sender: UIButton) {
        
         ButtonToScroll.shared.categoryButtons.first?.sendActions(for: .touchUpInside)
-        
-        for b in ButtonToScroll.shared.detailButtons {
-            if b.currentTitle == button.currentTitle {
-                guard let idx = ButtonToScroll.shared.detailButtons.firstIndex(of: b) else { return }
+    
+        for button in ButtonToScroll.shared.detailButtons {
+
+            guard let title = button.currentTitle else { return }
+            
+            if title.contains(sender.currentTitle!) {
+                guard let idx = ButtonToScroll.shared.detailButtons.firstIndex(of: button) else { return }
                 ButtonToScroll.shared.detailButtons[idx].sendActions(for: .touchUpInside)
             }
+            
         }
     }
     

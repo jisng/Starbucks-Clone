@@ -30,7 +30,6 @@ class GiftHomeBestNewView: UIView {
     var buttonArray = [UIButton]()
     
     @objc func didTapButton(_ button: UIButton) {
-        print("눌림")
         NotificationCenter.default.post(name: .pushVC, object: nil)
     }
     
