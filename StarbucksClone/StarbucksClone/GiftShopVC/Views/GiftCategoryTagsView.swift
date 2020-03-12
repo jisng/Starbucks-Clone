@@ -18,7 +18,7 @@ class GiftCategoryTagsView: UIView {
     
     var filterName = "인기순"
     
-    let tags = ["추천  ", "  전체  ", "  Love  ", "  응원  ", "  생일  ", "  감사  ", "  1-2만원대선물  ", "  우정  ", "  결혼  ", "  출산/돌  ", "  파티"]
+    let tags = ["  추천  ", "  전체  ", "  Love  ", "  응원  ", "  생일  ", "  감사  ", "  1-2만원대선물  ", "  우정  ", "  결혼  ", "  출산/돌  ", "  파티  "]
     
     private let tagScrollView = UIScrollView()
     private var tagButtons = [UIButton]()
@@ -43,18 +43,6 @@ class GiftCategoryTagsView: UIView {
     }
     
     @objc func didTapTagButton(_ button: UIButton) {
-        for b in tagButtons {
-            if button == b {
-                b.setTitleColor(.white, for: .normal)
-                b.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-                b.layer.cornerRadius = 14
-                b.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
-                                         .layerMinXMaxYCorner, .layerMinXMinYCorner]
-            } else {
-                b.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-                b.backgroundColor = .clear
-            }
-        }
         
         if tagScrollView.contentOffset.x < tagScrollView.contentSize.width - self.bounds.width {
             UIView.animate(withDuration: 0.3) {
@@ -62,6 +50,9 @@ class GiftCategoryTagsView: UIView {
             }
         }
         delegate?.moveScrollView(idx: tags.firstIndex(of: button.currentTitle ?? "추천") ?? 0)
+        
+        self.setSelectedEffect(button.tag)
+        
     }
     
     private func setUI() {
@@ -83,11 +74,18 @@ class GiftCategoryTagsView: UIView {
     
     private func setButton() {
         
-        for tag in tags {
+        for (index, tag) in tags.enumerated() {
             let button = UIButton()
+            button.tag = index
             button.setTitle(tag, for: .normal)
             button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+            button.setTitleColor(.white, for: .selected)
             button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+            
+            button.layer.cornerRadius = 14
+            button.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
+                                     .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            
             ButtonToScroll.shared.detailButtons.append(button)
             button.addTarget(self, action: #selector(didTapTagButton(_:)), for: .touchUpInside)
             tagButtons.append(button)
@@ -148,9 +146,22 @@ class GiftCategoryTagsView: UIView {
 }
 
 extension GiftCategoryTagsView: GiftCategoryViewDelegate {
-    func moveTagsView(idx: Int) {
+    func moveTagsView(offSet: CGFloat) {
         UIView.animate(withDuration: 0.3) {
-            self.tagScrollView.contentOffset.x = self.tagButtons[0].bounds.width * CGFloat(idx)
+            self.tagScrollView.contentOffset.x = offSet
         }
     }
+    
+    func moveTagsView(idx: Int) {
+        self.setSelectedEffect(idx)
+    }
+    
+    private func setSelectedEffect(_ idx: Int) {
+        tagButtons.enumerated().forEach {
+            let isSelected = $0.offset == idx
+            $0.element.setTitleColor(isSelected ? .white : #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+            $0.element.backgroundColor = isSelected ? #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) : .white
+        }
+    }
+    
 }

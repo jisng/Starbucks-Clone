@@ -10,6 +10,7 @@ import UIKit
 
 protocol GiftCategoryViewDelegate: class {
     func moveTagsView(idx: Int)
+    func moveTagsView(offSet: CGFloat)
 }
 
 class GiftCategoryView: UIView {
@@ -96,8 +97,15 @@ extension GiftCategoryView: GiftCategoryTagsViewDelegate {
 }
 
 extension GiftCategoryView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+//        delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
+        delegate?.moveTagsView(offSet: scrollView.contentOffset.x/11)
     }
 }
 
