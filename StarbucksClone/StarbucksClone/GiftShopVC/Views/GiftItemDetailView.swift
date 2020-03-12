@@ -18,7 +18,11 @@ struct productDummy {
 class GiftItemDetailView: UIView {
     
     var product = productDummy(imageName: "starbucks-logo", titleName: "부드러운 디저트 세트", subtitleName: "카페 아메리카노 Tall 2잔 + 부드러운 생크림 카스테라", price: 10000)
-    var count = 1
+    var count = 1 {
+        willSet {
+            countLabel.text = "\(newValue)"
+        }
+    }
 
     private let itemImageView = UIImageView()
     private let itemTitleLabel = UILabel()
@@ -39,6 +43,19 @@ class GiftItemDetailView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didTapButton(_ button: UIButton) {
+        switch button.currentImage {
+        case UIImage(systemName: "minus"):
+            if count > 1 {
+                count -= 1
+            }
+        case UIImage(systemName: "plus"):
+            count += 1
+        default:
+            break
+        }
     }
     
     private func setUI() {
@@ -71,12 +88,13 @@ class GiftItemDetailView: UIView {
         minusButton.tintColor = #colorLiteral(red: 0.4504895806, green: 0.4027304351, blue: 0.3770147562, alpha: 1)
         minusButton.backgroundColor = #colorLiteral(red: 0.829349339, green: 0.8158304095, blue: 0.7850875258, alpha: 1)
         
-        countLabel.text = "\(count)"
+        countLabel.text = "1"
+//        "\(count)"
         countLabel.textAlignment = .center
-        countLabel.font = .systemFont(ofSize: 8, weight: .bold)
+        countLabel.font = .systemFont(ofSize: 16, weight: .bold)
         
         addButton.setTitle("담기", for: .normal)
-        addButton.titleLabel?.font = .systemFont(ofSize: 8, weight: .bold)
+        addButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         addButton.setTitleColor(#colorLiteral(red: 0.5289751887, green: 0.4811838269, blue: 0.45547086, alpha: 1), for: .normal)
         addButton.backgroundColor = #colorLiteral(red: 0.8411129713, green: 0.8275960088, blue: 0.7968521714, alpha: 1)
         addButton.layer.cornerRadius = 2
@@ -86,6 +104,10 @@ class GiftItemDetailView: UIView {
         presentButton.setTitleColor(#colorLiteral(red: 0.9606098533, green: 0.9609289765, blue: 0.956355989, alpha: 1), for: .normal)
         presentButton.backgroundColor = #colorLiteral(red: 0.4786907434, green: 0.4260859191, blue: 0.4004599154, alpha: 1)
         presentButton.layer.cornerRadius = 2
+        
+        [minusButton, plusButton, addButton, presentButton].forEach({
+            $0.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+        })
     }
     
     private func setLayout() {

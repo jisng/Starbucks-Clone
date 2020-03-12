@@ -46,7 +46,7 @@ class GiftCategoryTagsView: UIView {
         
         if tagScrollView.contentOffset.x < tagScrollView.contentSize.width - self.bounds.width {
             UIView.animate(withDuration: 0.3) {
-                self.tagScrollView.contentOffset.x += button.bounds.width
+                self.tagScrollView.contentOffset.x += button.bounds.width + 10
             }
         }
         delegate?.moveScrollView(idx: tags.firstIndex(of: button.currentTitle ?? "추천") ?? 0)

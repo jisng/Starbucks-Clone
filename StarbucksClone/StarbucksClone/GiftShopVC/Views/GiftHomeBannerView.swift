@@ -10,6 +10,8 @@ import UIKit
 
 class GiftHomeBannerView: UIScrollView {
     
+    var bannerImage = [UIImage(named: "GiftShopBanner1"), UIImage(named: "GiftShopBanner2"), UIImage(named: "GiftShopBanner3")]
+    
     private var timer: Timer?
     private var xOffSet: CGFloat = 0
     
@@ -23,12 +25,6 @@ class GiftHomeBannerView: UIScrollView {
         setLayout()
         autoScroll()
     }
-    
-//    override func layoutSubviews() {
-//        [bannerButton1,bannerButton2,bannerButton3].forEach({
-//            $0.widthAnchor.constraint(equalToConstant: self.bounds.width).isActive = true
-//        })
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -67,9 +63,10 @@ class GiftHomeBannerView: UIScrollView {
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         
-        [bannerButton1, bannerButton2, bannerButton3].forEach({
-            $0.setImage(UIImage(named: "starbucks-logo"), for: .normal)
-        })
+        bannerButton1.setImage(bannerImage[0], for: .normal)
+        bannerButton2.setImage(bannerImage[1], for: .normal)
+        bannerButton3.setImage(bannerImage[2], for: .normal)
+        
         bannerButton1.backgroundColor = .white
         bannerButton2.backgroundColor = .gray
         bannerButton3.backgroundColor = .black

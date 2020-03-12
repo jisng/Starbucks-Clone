@@ -12,7 +12,11 @@ class NewTableViewCell: UITableViewCell {
     
     static let identifier = "newItemCell"
     
-    private let itemView = GiftHomeBestNewView(titleText: "NEW", subTitleText: "오늘 새로 나온 상품")
+    var newData = ["오후에 녹차 한잔 세트", "사랑스러워 세트", "달콤한 우리 사랑 세트",
+                   "화이트 데이 캔디 세트", "스프링 머그 세트", "스프링 플레이트 세트"]
+    
+    lazy var itemView = GiftHomeBestNewView(titleText: "NEW", subTitleText: "오늘 새로 나온 상품", data: newData)
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

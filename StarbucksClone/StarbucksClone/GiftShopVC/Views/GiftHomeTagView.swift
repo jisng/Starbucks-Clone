@@ -48,19 +48,28 @@ class GiftHomeTagView: GiftHomeTagLineView {
     
     private func setUI() {
         [loveButton, cheerButton, birthButton, thanksButton, dollarButton, friendShipButton, marryButton, cardButton].forEach({
-            $0.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-            $0.titleLabel?.font = .systemFont(ofSize: 12)
+            $0.imageView?.contentMode = .scaleAspectFit
+//            $0.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+//            $0.titleLabel?.font = .systemFont(ofSize: 12)
             $0.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         })
         
         loveButton.setTitle("Love", for: .normal)
+        loveButton.setImage(UIImage(named: "Love"), for: .normal)
         cheerButton.setTitle("응원", for: .normal)
+        cheerButton.setImage(UIImage(named: "cheerUp"), for: .normal)
         birthButton.setTitle("생일", for: .normal)
+        birthButton.setImage(UIImage(named: "birthday"), for: .normal)
         thanksButton.setTitle("감사", for: .normal)
+        thanksButton.setImage(UIImage(named: "thanks"), for: .normal)
         dollarButton.setTitle("1-2만원대선물", for: .normal)
+        dollarButton.setImage(UIImage(named: "gift"), for: .normal)
         friendShipButton.setTitle("우정", for: .normal)
+        friendShipButton.setImage(UIImage(named: "friendship"), for: .normal)
         marryButton.setTitle("결혼", for: .normal)
+        marryButton.setImage(UIImage(named: "marry"), for: .normal)
         cardButton.setTitle("e-Gift Card", for: .normal)
+        cardButton.setImage(UIImage(named: "eCard"), for: .normal)
     }
     
     private func setLayout() {
@@ -68,8 +77,8 @@ class GiftHomeTagView: GiftHomeTagLineView {
             self.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                $0.topAnchor.constraint(equalTo: self.topAnchor),
-                $0.bottomAnchor.constraint(equalTo: centerXLineLabel.topAnchor)
+                $0.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+                $0.bottomAnchor.constraint(equalTo: centerXLineLabel.topAnchor, constant: -8)
             ])
         })
         NSLayoutConstraint.activate([
@@ -90,8 +99,8 @@ class GiftHomeTagView: GiftHomeTagLineView {
             self.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                $0.topAnchor.constraint(equalTo: centerXLineLabel.bottomAnchor),
-                $0.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+                $0.topAnchor.constraint(equalTo: centerXLineLabel.bottomAnchor, constant: 8),
+                $0.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
             ])
         })
         NSLayoutConstraint.activate([

@@ -30,14 +30,17 @@ class GiftHomeItemView: UIView {
     }
     
     private func setUI() {
-        itemImageView.backgroundColor = .lightGray
-        itemImageView.contentMode = .scaleAspectFit
-        itemImageView.layer.cornerRadius = 16
+        itemImageView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        itemImageView.contentMode = .scaleAspectFill
+        itemImageView.layer.cornerRadius = 12
         itemImageView.clipsToBounds = true
         
-        itemTextLabel.textColor = .gray
+        itemTextLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         itemTextLabel.textAlignment = .center
-//        itemTextLabel.font = .systemFont(ofSize: 16)
+        itemTextLabel.numberOfLines = 2
+        itemTextLabel.lineBreakMode = .byWordWrapping
+        itemTextLabel.font = .systemFont(ofSize: 12)
+        
     }
     
     private func setLayout() {
@@ -48,12 +51,9 @@ class GiftHomeItemView: UIView {
             $0.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         })
         itemImageView.heightAnchor.constraint(equalTo: itemImageView.widthAnchor).isActive = true
-//        itemImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-        itemImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        itemImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         
-//        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 16).isActive = true
-//        itemTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
-        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor).isActive = true
+        itemTextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 12).isActive = true
         itemTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     

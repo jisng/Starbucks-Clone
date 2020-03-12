@@ -13,7 +13,16 @@ class GiftThemeDetailViewController: UIViewController {
     private let mainImageView = UIImageView()
     
     private let itemCollectionView = GiftCategoryCollectionView()
-
+    
+    init(imageName: String) {
+        mainImageView.image = UIImage(named: imageName)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -21,8 +30,7 @@ class GiftThemeDetailViewController: UIViewController {
     }
     
     private func setUI() {
-        mainImageView.image = UIImage(named: "starbucks-logo")
-        mainImageView.contentMode = .scaleAspectFit
+        mainImageView.contentMode = .scaleAspectFill
     }
     
     private func setLayout() {
@@ -35,10 +43,10 @@ class GiftThemeDetailViewController: UIViewController {
         })
         NSLayoutConstraint.activate([
             mainImageView.topAnchor.constraint(equalTo: guide.topAnchor),
-            mainImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
+            mainImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.34),
             
             itemCollectionView.topAnchor.constraint(equalTo: mainImageView.bottomAnchor),
-            itemCollectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+            itemCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
