@@ -21,6 +21,7 @@ class GiftShopController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Gift Shop"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: nil)
         setUI()
         setLayout()
@@ -103,7 +104,7 @@ class GiftShopController: UIViewController {
         selectView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06).isActive = true
         
         scrollView.topAnchor.constraint(equalTo: selectView.bottomAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
 }

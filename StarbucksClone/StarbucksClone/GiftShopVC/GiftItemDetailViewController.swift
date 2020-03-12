@@ -21,6 +21,7 @@ class GiftItemDetailViewController: UIViewController {
         setUI()
         setLayout()
     }
+    
     override func viewWillLayoutSubviews() {
         let guide = view.safeAreaLayoutGuide
         itemDetailView.widthAnchor.constraint(equalTo: guide.widthAnchor).isActive = true

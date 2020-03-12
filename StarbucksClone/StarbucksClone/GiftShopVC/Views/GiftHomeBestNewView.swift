@@ -15,17 +15,8 @@ struct dummyDataModel {
 
 class GiftHomeBestNewView: UIView {
     
-    var dummyData = [
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-    ]
+    var bestDataName = [String]()
+    
     
     var buttonArray = [UIButton]()
     
@@ -43,8 +34,9 @@ class GiftHomeBestNewView: UIView {
         self.backgroundColor = .white
     }
     
-    convenience init(titleText: String, subTitleText: String) {
+    convenience init(titleText: String, subTitleText: String, data: [String]) {
         self.init()
+        bestDataName = data
         setUI(title: titleText, subTitle: subTitleText)
         setLayout()
         setItemLayout()
@@ -56,7 +48,7 @@ class GiftHomeBestNewView: UIView {
     
     private func setUI(title: String, subTitle: String) {
         titleLabel.text = title
-        titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.textColor = .black
         
         subtitleLabel.text = subTitle
@@ -80,9 +72,9 @@ class GiftHomeBestNewView: UIView {
         
         self.addSubview(itemScrollView)
         itemScrollView.translatesAutoresizingMaskIntoConstraints = false
+        itemScrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
         itemScrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         itemScrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        itemScrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
         itemScrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
@@ -125,8 +117,8 @@ class GiftHomeBestNewView: UIView {
     
     private func makeItemArray() -> [UIView] {
         var itemArray: [UIView] = []
-        for data in dummyData {
-            let itemView = GiftHomeItemView(image: data.imageName, text: data.titleText)
+        for data in bestDataName {
+            let itemView = GiftHomeItemView(image: data, text: data)
             itemArray.append(itemView)
         }
         return itemArray
