@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Test {
-    static let shared = Test()
+class ButtonToScroll {
+    static let shared = ButtonToScroll()
     private init() {}
     var categoryButtons = [UIButton]()
     var detailButtons = [UIButton]()
@@ -57,7 +57,7 @@ class GiftShopSelectView: UIView {
         let homeButton = UIButton()
         let categoryButton = UIButton()
         let giftBoxButton = UIButton()
-        Test.shared.categoryButtons.append(categoryButton)
+        ButtonToScroll.shared.categoryButtons.append(categoryButton)
         homeButton.setTitle("홈", for: .normal)
         categoryButton.setTitle("카테고리", for: .normal)
         giftBoxButton.setTitle("선물함", for: .normal)
@@ -102,16 +102,4 @@ extension GiftShopSelectView: GiftShopControllerDelegate {
 }
 
 
-extension UIView {
-  var parentViewController: UIViewController? {
-    var responder: UIResponder? = self
-    while let nextResponder = responder?.next {
-      responder = nextResponder
-      if let vc = nextResponder as? UIViewController {
-        return vc
-      }
-    }
-    return nil
-  }
-}
 

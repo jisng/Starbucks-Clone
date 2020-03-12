@@ -72,7 +72,7 @@ class GiftCategoryView: UIView {
             tagsView.topAnchor.constraint(equalTo: self.topAnchor),
             tagsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tagsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.14)
+            tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12)
         ])
         
         self.addSubview(itemsScrollView)
@@ -100,3 +100,5 @@ extension GiftCategoryView: UIScrollViewDelegate {
         delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
     }
 }
+
+

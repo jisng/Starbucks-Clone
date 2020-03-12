@@ -37,6 +37,11 @@ class ThemeTableViewCell: UITableViewCell {
         })
     }
     
+    @objc private func pushVC(_ button: UIButton) {
+        guard let navi = self.parentNaviController else { return }
+        navi.pushViewController(GiftThemeDetailViewController(), animated: true)
+    }
+    
     private func setUI() {
         
         titleLabel.text = "테마 선물"
@@ -49,6 +54,7 @@ class ThemeTableViewCell: UITableViewCell {
         
         [item1Button, item2Button, item3Button].forEach({
             $0.layer.cornerRadius = 16
+            $0.addTarget(self, action: #selector(pushVC(_:)), for: .touchUpInside)
         })
     }
     
@@ -73,5 +79,6 @@ class ThemeTableViewCell: UITableViewCell {
             item3Button.topAnchor.constraint(equalTo: item2Button.bottomAnchor, constant: 12),
             item3Button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
+        
     }
 }

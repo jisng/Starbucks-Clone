@@ -8,13 +8,7 @@
 
 import UIKit
 
-//protocol GiftHomeTagViewDelegate: class {
-//    func selectCategoryTagButton(buttonName: String)
-//}
-
 class GiftHomeTagView: GiftHomeTagLineView {
-    
-//    weak var delegate: GiftHomeTagViewDelegate?
     
     private let loveButton = UIButton()
     private let cheerButton = UIButton()
@@ -34,16 +28,14 @@ class GiftHomeTagView: GiftHomeTagLineView {
     
     @objc func didTapButton (_ button: UIButton) {
        
-        Test.shared.categoryButtons.first?.sendActions(for: .touchUpInside)
+        ButtonToScroll.shared.categoryButtons.first?.sendActions(for: .touchUpInside)
         
-        for b in Test.shared.detailButtons {
+        for b in ButtonToScroll.shared.detailButtons {
             if b.currentTitle == button.currentTitle {
-                guard let idx = Test.shared.detailButtons.firstIndex(of: b) else { return }
-                Test.shared.detailButtons[idx].sendActions(for: .touchUpInside)
+                guard let idx = ButtonToScroll.shared.detailButtons.firstIndex(of: b) else { return }
+                ButtonToScroll.shared.detailButtons[idx].sendActions(for: .touchUpInside)
             }
         }
-        
-//        delegate?.selectCategoryTagButton(buttonName: button.currentTitle ?? "")
     }
     
     required init?(coder: NSCoder) {

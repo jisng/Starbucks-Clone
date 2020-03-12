@@ -9,7 +9,6 @@
 import UIKit
 
 protocol GiftShopControllerDelegate: class {
-//    func moveSelectLine(offSet: Int)
     func movesSelectLine(offSet: CGFloat)
 }
 
@@ -26,12 +25,22 @@ class GiftShopController: UIViewController {
         setUI()
         setLayout()
         setViewsLayout()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(pushVC), name: .pushVC, object: nil)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         selectView.layer.addViewBorder(edge: .bottom, color: .gray, thickness: 1)
         
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func pushVC() {
+        navigationController?.pushViewController(GiftItemDetailViewController(), animated: true)
     }
     
     private func setUI() {
@@ -65,7 +74,6 @@ class GiftShopController: UIViewController {
             categoryView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             categoryView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             categoryView.leadingAnchor.constraint(equalTo: homeView.trailingAnchor),
-            //            categoryView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             categoryView.widthAnchor.constraint(equalTo: homeView.widthAnchor),
             categoryView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
@@ -124,9 +132,6 @@ extension GiftShopController: GiftShopSelectViewDelegate {
 }
 
 extension GiftShopController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        delegate?.moveSelectLine(offSet: Int(scrollView.contentOffset.x/view.bounds.width))
-//    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.movesSelectLine(offSet: scrollView.contentOffset.x/3)
     }

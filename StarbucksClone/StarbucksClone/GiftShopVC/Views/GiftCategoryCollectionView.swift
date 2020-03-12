@@ -39,6 +39,7 @@ class GiftCategoryCollectionView: UIView {
         itemCollectionView.frame = self.frame
         itemCollectionView.collectionViewLayout = layout
         itemCollectionView.dataSource = self
+        itemCollectionView.delegate = self
         itemCollectionView.backgroundColor = .white
         
         itemCollectionView.register(CategoryCollectionViewCell.self,
@@ -107,4 +108,11 @@ extension GiftCategoryCollectionView: UICollectionViewDataSource {
         return item
     }
     
+}
+
+extension GiftCategoryCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let navi = self.parentNaviController else { return }
+        navi.pushViewController(GiftItemDetailViewController(), animated: true)
+    }
 }

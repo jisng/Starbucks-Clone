@@ -30,7 +30,8 @@ class GiftHomeBestNewView: UIView {
     var buttonArray = [UIButton]()
     
     @objc func didTapButton(_ button: UIButton) {
-        
+        print("눌림")
+        NotificationCenter.default.post(name: .pushVC, object: nil)
     }
     
     private let titleLabel = UILabel()
@@ -112,7 +113,7 @@ class GiftHomeBestNewView: UIView {
         
         for idx in 0..<itemArray.count {
             let button = UIButton()
-//            button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+            button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
             buttonArray.append(button)
             itemScrollView.addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false

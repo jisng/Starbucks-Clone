@@ -18,7 +18,7 @@ class GiftCategoryTagsView: UIView {
     
     var filterName = "인기순"
     
-    let tags = ["추천", "전체", "Love", "응원", "생일", "감사", "1-2만원대선물", "우정", "결혼", "출산/돌", "파티"]
+    let tags = ["추천  ", "  전체  ", "  Love  ", "  응원  ", "  생일  ", "  감사  ", "  1-2만원대선물  ", "  우정  ", "  결혼  ", "  출산/돌  ", "  파티"]
     
     private let tagScrollView = UIScrollView()
     private var tagButtons = [UIButton]()
@@ -43,7 +43,19 @@ class GiftCategoryTagsView: UIView {
     }
     
     @objc func didTapTagButton(_ button: UIButton) {
-        button.backgroundColor = .red
+        for b in tagButtons {
+            if button == b {
+                b.setTitleColor(.white, for: .normal)
+                b.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+                b.layer.cornerRadius = 14
+                b.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner,
+                                         .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            } else {
+                b.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+                b.backgroundColor = .clear
+            }
+        }
+        
         if tagScrollView.contentOffset.x < tagScrollView.contentSize.width - self.bounds.width {
             UIView.animate(withDuration: 0.3) {
                 self.tagScrollView.contentOffset.x += button.bounds.width
@@ -76,7 +88,7 @@ class GiftCategoryTagsView: UIView {
             button.setTitle(tag, for: .normal)
             button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
-            Test.shared.detailButtons.append(button)
+            ButtonToScroll.shared.detailButtons.append(button)
             button.addTarget(self, action: #selector(didTapTagButton(_:)), for: .touchUpInside)
             tagButtons.append(button)
         }
@@ -92,9 +104,7 @@ class GiftCategoryTagsView: UIView {
         for idx in 0..<tagButtons.count {
             tagScrollView.addSubview(tagButtons[idx])
             tagButtons[idx].translatesAutoresizingMaskIntoConstraints = false
-            tagButtons[idx].topAnchor.constraint(equalTo: tagScrollView.topAnchor).isActive = true
-            tagButtons[idx].bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor).isActive = true
-            tagButtons[idx].heightAnchor.constraint(equalTo: tagScrollView.heightAnchor).isActive = true
+            tagButtons[idx].centerYAnchor.constraint(equalTo: tagScrollView.centerYAnchor).isActive = true
             
             switch idx {
             case 0:
