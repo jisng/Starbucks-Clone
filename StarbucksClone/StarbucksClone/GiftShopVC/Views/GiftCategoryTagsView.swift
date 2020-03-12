@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol GiftCategoryTagsViewDelegate: class {
+    func moveScrollView(idx: Int)
+}
+
 class GiftCategoryTagsView: UIView {
+    
+    weak var delegate: GiftCategoryTagsViewDelegate?
     
     var filterName = "인기순"
     
     let tags = ["추천", "전체", "Love", "응원", "생일", "감사", "1-2만원대선물", "우정", "결혼", "출산/돌", "파티"]
     
     private let tagScrollView = UIScrollView()
+    private var tagButtons = [UIButton]()
     
     private let filterView = UIView()
     private let filterButton = UIButton()
@@ -36,14 +43,16 @@ class GiftCategoryTagsView: UIView {
     }
     
     @objc func didTapTagButton(_ button: UIButton) {
-        if UIScreen.main.bounds.maxX != button.frame.maxX {
+        if tagScrollView.contentOffset.x < tagScrollView.contentSize.width - self.bounds.width {
             UIView.animate(withDuration: 0.3) {
-                self.tagScrollView.contentOffset.x += 40
+                self.tagScrollView.contentOffset.x += button.bounds.width
             }
         }
+        delegate?.moveScrollView(idx: tags.firstIndex(of: button.currentTitle ?? "추천") ?? 0)
     }
     
     private func setUI() {
+        
         tagScrollView.showsHorizontalScrollIndicator = false
         tagScrollView.backgroundColor = .white
         tagScrollView.showsHorizontalScrollIndicator = false
@@ -60,7 +69,6 @@ class GiftCategoryTagsView: UIView {
     }
     
     private func setButton() {
-        var buttons = [UIButton]()
         
         for tag in tags {
             let button = UIButton()
@@ -68,10 +76,10 @@ class GiftCategoryTagsView: UIView {
             button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
             button.addTarget(self, action: #selector(didTapTagButton(_:)), for: .touchUpInside)
-            buttons.append(button)
+            tagButtons.append(button)
         }
         
-        for button in buttons {
+        for button in tagButtons {
             let selectView = UIView()
             selectView.backgroundColor = .yellow
             tagScrollView.addSubview(selectView)
@@ -79,21 +87,21 @@ class GiftCategoryTagsView: UIView {
                                       width: button.frame.width, height: button.frame.height)
         }
         
-        for idx in 0..<buttons.count {
-            tagScrollView.addSubview(buttons[idx])
-            buttons[idx].translatesAutoresizingMaskIntoConstraints = false
-            buttons[idx].topAnchor.constraint(equalTo: tagScrollView.topAnchor).isActive = true
-            buttons[idx].bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor).isActive = true
-            buttons[idx].heightAnchor.constraint(equalTo: tagScrollView.heightAnchor).isActive = true
+        for idx in 0..<tagButtons.count {
+            tagScrollView.addSubview(tagButtons[idx])
+            tagButtons[idx].translatesAutoresizingMaskIntoConstraints = false
+            tagButtons[idx].topAnchor.constraint(equalTo: tagScrollView.topAnchor).isActive = true
+            tagButtons[idx].bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor).isActive = true
+            tagButtons[idx].heightAnchor.constraint(equalTo: tagScrollView.heightAnchor).isActive = true
             
             switch idx {
             case 0:
-                buttons[idx].leadingAnchor.constraint(equalTo: tagScrollView.leadingAnchor, constant: 20).isActive = true
-            case buttons.count-1:
-                buttons[idx].trailingAnchor.constraint(equalTo: tagScrollView.trailingAnchor, constant: -20).isActive = true
+                tagButtons[idx].leadingAnchor.constraint(equalTo: tagScrollView.leadingAnchor, constant: 20).isActive = true
+            case tagButtons.count-1:
+                tagButtons[idx].trailingAnchor.constraint(equalTo: tagScrollView.trailingAnchor, constant: -20).isActive = true
                 fallthrough
             default:
-                buttons[idx].leadingAnchor.constraint(equalTo: buttons[idx-1].trailingAnchor, constant: 20).isActive = true
+                tagButtons[idx].leadingAnchor.constraint(equalTo: tagButtons[idx-1].trailingAnchor, constant: 20).isActive = true
             }
         }
     }
@@ -124,5 +132,13 @@ class GiftCategoryTagsView: UIView {
             filterButton.bottomAnchor.constraint(equalTo: filterView.bottomAnchor),
             filterButton.trailingAnchor.constraint(equalTo: filterView.trailingAnchor, constant: -12),
         ])
+    }
+}
+
+extension GiftCategoryTagsView: GiftCategoryViewDelegate {
+    func moveTagsView(idx: Int) {
+        UIView.animate(withDuration: 0.3) {
+            self.tagScrollView.contentOffset.x = self.tagButtons[0].bounds.width * CGFloat(idx)
+        }
     }
 }

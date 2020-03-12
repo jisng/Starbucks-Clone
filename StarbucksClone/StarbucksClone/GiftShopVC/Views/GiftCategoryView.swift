@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol GiftCategoryViewDelegate: class {
+    func moveTagsView(idx: Int)
+}
+
 class GiftCategoryView: UIView {
+    
+    weak var delegate: GiftCategoryViewDelegate?
     
     private let tagsView = GiftCategoryTagsView()
     private let itemsScrollView = UIScrollView()
@@ -48,13 +54,11 @@ class GiftCategoryView: UIView {
         }
     }
     
-    private func setCollectionItem() {
-        
-    }
-    
     private func setUI() {
+        self.delegate = tagsView
+        itemsScrollView.delegate = self
         itemsScrollView.isPagingEnabled = true
-        
+        tagsView.delegate = self
         for _ in 0..<tagsView.tags.count {
             let collectionView = GiftCategoryCollectionView()
             collectionViews.append(collectionView)
@@ -80,5 +84,19 @@ class GiftCategoryView: UIView {
             itemsScrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             itemsScrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+    }
+}
+
+extension GiftCategoryView: GiftCategoryTagsViewDelegate {
+    func moveScrollView(idx: Int) {
+        UIView.animate(withDuration: 0.3) {
+            self.itemsScrollView.contentOffset.x = self.bounds.width * CGFloat(idx)
+        }
+    }
+}
+
+extension GiftCategoryView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
     }
 }

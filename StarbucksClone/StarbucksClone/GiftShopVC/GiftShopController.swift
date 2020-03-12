@@ -30,7 +30,6 @@ class GiftShopController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
         selectView.layer.addViewBorder(edge: .bottom, color: .gray, thickness: 1)
         
     }
