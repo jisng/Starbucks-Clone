@@ -43,6 +43,7 @@ class GiftCategoryTagsView: UIView {
     }
     
     @objc func didTapTagButton(_ button: UIButton) {
+        button.backgroundColor = .red
         if tagScrollView.contentOffset.x < tagScrollView.contentSize.width - self.bounds.width {
             UIView.animate(withDuration: 0.3) {
                 self.tagScrollView.contentOffset.x += button.bounds.width
@@ -75,6 +76,7 @@ class GiftCategoryTagsView: UIView {
             button.setTitle(tag, for: .normal)
             button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+            Test.shared.detailButtons.append(button)
             button.addTarget(self, action: #selector(didTapTagButton(_:)), for: .touchUpInside)
             tagButtons.append(button)
         }

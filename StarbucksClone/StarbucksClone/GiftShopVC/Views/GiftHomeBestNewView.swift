@@ -29,17 +29,9 @@ class GiftHomeBestNewView: UIView {
     
     var buttonArray = [UIButton]()
     
-    /*
-     버튼 액션, 델리게이트 사용?
     @objc func didTapButton(_ button: UIButton) {
-        switch button {
-        case buttonArray[0]:
-            print("0")
-        default:
-            print("default")
-        }
+        
     }
- */
     
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()

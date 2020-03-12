@@ -8,7 +8,13 @@
 
 import UIKit
 
+//protocol GiftHomeTagViewDelegate: class {
+//    func selectCategoryTagButton(buttonName: String)
+//}
+
 class GiftHomeTagView: GiftHomeTagLineView {
+    
+//    weak var delegate: GiftHomeTagViewDelegate?
     
     private let loveButton = UIButton()
     private let cheerButton = UIButton()
@@ -24,11 +30,20 @@ class GiftHomeTagView: GiftHomeTagLineView {
         super.init(frame: frame)
         setUI()
         setLayout()
-        loveButton.addTarget(self, action: #selector(loveButton(_:)), for: .touchUpInside)
     }
     
-    @objc func loveButton(_ button: UIButton) {
-        print(button)
+    @objc func didTapButton (_ button: UIButton) {
+       
+        Test.shared.categoryButtons.first?.sendActions(for: .touchUpInside)
+        
+        for b in Test.shared.detailButtons {
+            if b.currentTitle == button.currentTitle {
+                guard let idx = Test.shared.detailButtons.firstIndex(of: b) else { return }
+                Test.shared.detailButtons[idx].sendActions(for: .touchUpInside)
+            }
+        }
+        
+//        delegate?.selectCategoryTagButton(buttonName: button.currentTitle ?? "")
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +54,7 @@ class GiftHomeTagView: GiftHomeTagLineView {
         [loveButton, cheerButton, birthButton, thanksButton, dollarButton, friendShipButton, marryButton, cardButton].forEach({
             $0.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
             $0.titleLabel?.font = .systemFont(ofSize: 12)
+            $0.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         })
         
         loveButton.setTitle("Love", for: .normal)

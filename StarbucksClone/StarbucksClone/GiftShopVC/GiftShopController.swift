@@ -47,7 +47,8 @@ class GiftShopController: UIViewController {
         let homeView = GiftHomeView()
         let categoryView = GiftCategoryView()
         let giftBoxView = GiftBoxView()
-        
+        let button = UIButton()
+        button.sendActions(for: .touchUpInside)
         scrollView.addSubview(homeView)
         homeView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -10,5 +10,4 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let test = "git test..."
 }
