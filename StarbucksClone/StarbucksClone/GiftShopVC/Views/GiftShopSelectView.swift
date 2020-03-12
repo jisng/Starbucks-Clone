@@ -8,6 +8,13 @@
 
 import UIKit
 
+class ButtonToScroll {
+    static let shared = ButtonToScroll()
+    private init() {}
+    var categoryButtons = [UIButton]()
+    var detailButtons = [UIButton]()
+}
+
 protocol GiftShopSelectViewDelegate: class {
     func customMenuBar(buttonName: String)
 }
@@ -15,6 +22,7 @@ protocol GiftShopSelectViewDelegate: class {
 class GiftShopSelectView: UIView {
     
     weak var delegate: GiftShopSelectViewDelegate?
+    
     
     private let buttonStackView = UIStackView()
     private let selectLine = UILabel()
@@ -33,6 +41,7 @@ class GiftShopSelectView: UIView {
     }
     
     @objc func didTapButton(_ button: UIButton) {
+        
         delegate?.customMenuBar(buttonName: button.currentTitle!)
         UIView.animate(withDuration: 0.3) {
             self.lineLeading?.constant = button.frame.minX
@@ -48,6 +57,7 @@ class GiftShopSelectView: UIView {
         let homeButton = UIButton()
         let categoryButton = UIButton()
         let giftBoxButton = UIButton()
+        ButtonToScroll.shared.categoryButtons.append(categoryButton)
         homeButton.setTitle("홈", for: .normal)
         categoryButton.setTitle("카테고리", for: .normal)
         giftBoxButton.setTitle("선물함", for: .normal)
@@ -59,10 +69,6 @@ class GiftShopSelectView: UIView {
         })
         
         selectLine.backgroundColor = .brown
-        
-        dump(self.parentViewController)
-//        guard let vc = self.parentViewController as? GiftShopController else { return }
-//        vc.delegate = self
     }
     
     private func setLayout() {
@@ -96,16 +102,4 @@ extension GiftShopSelectView: GiftShopControllerDelegate {
 }
 
 
-extension UIView {
-  var parentViewController: UIViewController? {
-    var responder: UIResponder? = self
-    while let nextResponder = responder?.next {
-      responder = nextResponder
-      if let vc = nextResponder as? UIViewController {
-        return vc
-      }
-    }
-    return nil
-  }
-}
 

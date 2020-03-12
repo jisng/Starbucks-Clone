@@ -29,17 +29,9 @@ class GiftHomeBestNewView: UIView {
     
     var buttonArray = [UIButton]()
     
-    /*
-     버튼 액션, 델리게이트 사용?
     @objc func didTapButton(_ button: UIButton) {
-        switch button {
-        case buttonArray[0]:
-            print("0")
-        default:
-            print("default")
-        }
+        NotificationCenter.default.post(name: .pushVC, object: nil)
     }
- */
     
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
@@ -120,7 +112,7 @@ class GiftHomeBestNewView: UIView {
         
         for idx in 0..<itemArray.count {
             let button = UIButton()
-//            button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+            button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
             buttonArray.append(button)
             itemScrollView.addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false

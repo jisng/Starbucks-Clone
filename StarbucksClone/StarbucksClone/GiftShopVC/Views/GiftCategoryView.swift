@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol GiftCategoryViewDelegate: class {
+    func moveTagsView(idx: Int)
+    func moveTagsView(offSet: CGFloat)
+}
+
 class GiftCategoryView: UIView {
+    
+    weak var delegate: GiftCategoryViewDelegate?
     
     private let tagsView = GiftCategoryTagsView()
     private let itemsScrollView = UIScrollView()
@@ -48,13 +55,11 @@ class GiftCategoryView: UIView {
         }
     }
     
-    private func setCollectionItem() {
-        
-    }
-    
     private func setUI() {
+        self.delegate = tagsView
+        itemsScrollView.delegate = self
         itemsScrollView.isPagingEnabled = true
-        
+        tagsView.delegate = self
         for _ in 0..<tagsView.tags.count {
             let collectionView = GiftCategoryCollectionView()
             collectionViews.append(collectionView)
@@ -68,7 +73,7 @@ class GiftCategoryView: UIView {
             tagsView.topAnchor.constraint(equalTo: self.topAnchor),
             tagsView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tagsView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.14)
+            tagsView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.12)
         ])
         
         self.addSubview(itemsScrollView)
@@ -82,3 +87,26 @@ class GiftCategoryView: UIView {
         ])
     }
 }
+
+extension GiftCategoryView: GiftCategoryTagsViewDelegate {
+    func moveScrollView(idx: Int) {
+        UIView.animate(withDuration: 0.3) {
+            self.itemsScrollView.contentOffset.x = self.bounds.width * CGFloat(idx)
+        }
+    }
+}
+
+extension GiftCategoryView: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x)
+//        delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
+        delegate?.moveTagsView(offSet: scrollView.contentOffset.x/11)
+    }
+}
+
+
