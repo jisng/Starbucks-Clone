@@ -17,7 +17,6 @@ struct productDummy {
 
 class GiftItemDetailView: UIView {
     
-//    var product = productDummy(imageName: "starbucks-logo", titleName: "부드러운 디저트 세트", subtitleName: "카페 아메리카노 Tall 2잔 + 부드러운 생크림 카스테라", price: 10000)
     var count = 1 {
         willSet {
             countLabel.text = "\(newValue)"
