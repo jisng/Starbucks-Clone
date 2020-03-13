@@ -16,7 +16,7 @@ struct CategoryItemModel {
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
-    var item = CategoryItemModel(itemImageName: "starbucks-logo", itemName: "starbucks-item-TRY-TRY-flfkdjalfidjafidjasi", itemPrice: 20000)
+    var item = GiftItem(title: "사랑스러워 세트", subtitle: "시즌 한정 세트", price: 14500)
     
     static let identifier = "CategoryCollectionCell"
     
@@ -35,16 +35,16 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUI() {
-//        itemImageView.image = UIImage(named: item.itemImageName)
+        itemImageView.image = UIImage(named: item.title)
         itemImageView.contentMode = .scaleAspectFit
         
-//        itemNameLabel.text = item.itemName
+        itemNameLabel.text = item.subtitle
         itemNameLabel.textColor = .gray
         itemNameLabel.textAlignment = .center
         itemNameLabel.lineBreakMode = .byWordWrapping
         itemNameLabel.numberOfLines = 2
         
-//        itemPriceLabel.text = "\(item.itemPrice)원"
+        itemPriceLabel.text = "\(item.price)원"
         itemPriceLabel.textAlignment = .center
         itemPriceLabel.font = .systemFont(ofSize: 14, weight: .bold)
     }

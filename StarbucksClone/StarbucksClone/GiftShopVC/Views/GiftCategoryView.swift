@@ -103,8 +103,6 @@ extension GiftCategoryView: UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
-//        delegate?.moveTagsView(idx: Int(scrollView.contentOffset.x/self.bounds.width))
         delegate?.moveTagsView(offSet: scrollView.contentOffset.x/11)
     }
 }

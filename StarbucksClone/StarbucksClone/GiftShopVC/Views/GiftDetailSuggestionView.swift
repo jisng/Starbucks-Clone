@@ -10,6 +10,36 @@ import UIKit
 
 class GiftDetailSuggestionView: UIView {
     
+    var data = [
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600),
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600),
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600)
+    ].shuffled()
+    
     private let titleLabel = UILabel()
     private let layout = UICollectionViewFlowLayout()
     private let itemCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
@@ -73,12 +103,13 @@ class GiftDetailSuggestionView: UIView {
 
 extension GiftDetailSuggestionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        9
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: GiftDetailCollectionViewCell.id,
                                                       for: indexPath) as! GiftDetailCollectionViewCell
+        item.configure(title: data[indexPath.row].title, subtitle: data[indexPath.row].subtitle, price: 0)
         return item
     }
     

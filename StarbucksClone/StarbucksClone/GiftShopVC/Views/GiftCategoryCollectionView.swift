@@ -10,17 +10,47 @@ import UIKit
 
 class GiftCategoryCollectionView: UIView {
     
-    var dummyData = [
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
-    ]
+//    var dummyData = [
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//        dummyDataModel(imageName: "starbucks-logo", titleText: "starbucks-TRY-TRY-TRY"),
+//    ]
+    
+    var data = [
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600),
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600),
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600)
+    ].shuffled()
     
     private let itemCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
     private let layout = UICollectionViewFlowLayout()
@@ -29,6 +59,11 @@ class GiftCategoryCollectionView: UIView {
         super.init(frame: frame)
         setUI()
         setLayout()
+    }
+    
+    convenience init(data: [GiftItem]) {
+        self.init()
+        self.data = data
     }
     
     required init?(coder: NSCoder) {
@@ -79,21 +114,21 @@ class GiftCategoryCollectionView: UIView {
 extension GiftCategoryCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dummyData.count
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier:CategoryCollectionViewCell.identifier,
                                                       for: indexPath) as! CategoryCollectionViewCell
         
-        item.itemImageView.image = UIImage(named: dummyData[indexPath.item].imageName)
-        item.itemNameLabel.text = dummyData[indexPath.item].titleText
-        item.itemPriceLabel.text = "\(indexPath.item)원"
+        item.itemImageView.image = UIImage(named: data[indexPath.item].title)
+        item.itemNameLabel.text = data[indexPath.item].title
+        item.itemPriceLabel.text = "\(data[indexPath.item].price)원"
         
-        switch dummyData.count - indexPath.item {
-        case 1 where dummyData.count % 2 != 0:
+        switch data.count - indexPath.item {
+        case 1 where data.count % 2 != 0:
             break
-        case 1...2 where dummyData.count % 2 == 0:
+        case 1...2 where data.count % 2 == 0:
             break
         default:
             item.layer.addBorder(edge: .bottom, color: .lightGray, thickness: 1)
@@ -112,7 +147,8 @@ extension GiftCategoryCollectionView: UICollectionViewDataSource {
 
 extension GiftCategoryCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
         guard let navi = self.parentNaviController else { return }
-        navi.pushViewController(GiftItemDetailViewController(), animated: true)
+        navi.pushViewController(GiftItemDetailViewController(data: cell.item), animated: true)
     }
 }

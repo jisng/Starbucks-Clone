@@ -10,12 +10,15 @@ import UIKit
 
 class GiftThemeDetailViewController: UIViewController {
     
+    private var itemData = [GiftItem]()
+    
     private let mainImageView = UIImageView()
     
-    private let itemCollectionView = GiftCategoryCollectionView()
+    lazy var itemCollectionView = GiftCategoryCollectionView(data: itemData)
     
-    init(imageName: String) {
+    init(imageName: String, data: [GiftItem]) {
         mainImageView.image = UIImage(named: imageName)
+        itemData = data
         super.init(nibName: nil, bundle: nil)
     }
     
