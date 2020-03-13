@@ -41,7 +41,9 @@ class GiftShopController: UIViewController {
     }
     
     @objc private func pushVC() {
-        navigationController?.pushViewController(GiftItemDetailViewController(), animated: true)
+        
+        let detailVC = GiftItemDetailViewController(data: GiftItem(title: "카페 아메리카노", subtitle: "카페 아메리카노 tall 1잔", price: 4100))
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     private func setUI() {

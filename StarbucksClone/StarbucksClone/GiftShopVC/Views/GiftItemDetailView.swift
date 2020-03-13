@@ -17,7 +17,7 @@ struct productDummy {
 
 class GiftItemDetailView: UIView {
     
-    var product = productDummy(imageName: "starbucks-logo", titleName: "부드러운 디저트 세트", subtitleName: "카페 아메리카노 Tall 2잔 + 부드러운 생크림 카스테라", price: 10000)
+//    var product = productDummy(imageName: "starbucks-logo", titleName: "부드러운 디저트 세트", subtitleName: "카페 아메리카노 Tall 2잔 + 부드러운 생크림 카스테라", price: 10000)
     var count = 1 {
         willSet {
             countLabel.text = "\(newValue)"
@@ -39,6 +39,14 @@ class GiftItemDetailView: UIView {
         self.backgroundColor = .white
         setUI()
         setLayout()
+    }
+    
+    convenience init(item: GiftItem) {
+        self.init()
+        itemImageView.image = UIImage(named: item.title)
+        itemTitleLabel.text = item.title
+        itemSubtitleLabel.text = item.subtitle
+        itemPriceLabel.text = "\(item.price) 원"
     }
     
     required init?(coder: NSCoder) {
@@ -63,16 +71,16 @@ class GiftItemDetailView: UIView {
             $0.textColor = .black
         })
         
-        itemImageView.image = UIImage(named: product.imageName)
+//        itemImageView.image = UIImage(named: product.imageName)
         itemImageView.contentMode = .scaleAspectFit
         
-        itemTitleLabel.text = product.titleName
+//        itemTitleLabel.text = product.titleName
         itemTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         
-        itemSubtitleLabel.text = product.subtitleName
+//        itemSubtitleLabel.text = product.subtitleName
         itemSubtitleLabel.font = .systemFont(ofSize: 14, weight: .medium)
         
-        itemPriceLabel.text = "\(product.price) 원"
+//        itemPriceLabel.text = "\(product.price) 원"
         itemPriceLabel.font = .systemFont(ofSize: 24, weight: .bold)
         itemPriceLabel.textColor = #colorLiteral(red: 0.6618039012, green: 0.5844079852, blue: 0.391377151, alpha: 1)
         

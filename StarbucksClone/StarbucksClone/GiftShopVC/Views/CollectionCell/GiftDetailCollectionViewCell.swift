@@ -10,8 +10,6 @@ import UIKit
 
 class GiftDetailCollectionViewCell: UICollectionViewCell {
     
-    var dummy = dummyDataModel(imageName: "starbucks-logo", titleText: "아이스라떼 샷추가 해주세요")
-    
     static let id = "DetailItemCell"
     
     private let itemImageView = UIImageView()
@@ -27,14 +25,17 @@ class GiftDetailCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(title: String, subtitle: String, price: Int) {
+        itemImageView.image = UIImage(named: title)
+        itemTitle.text = title
+    }
+    
     private func setUI() {
         itemImageView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-        itemImageView.image = UIImage(named: dummy.imageName)
         itemImageView.contentMode = .scaleAspectFit
         itemImageView.layer.cornerRadius = 8
         itemImageView.clipsToBounds = true
         
-        itemTitle.text = dummy.titleText
         itemTitle.font = .systemFont(ofSize: 14)
         itemTitle.numberOfLines = 2
         itemTitle.lineBreakMode = .byWordWrapping

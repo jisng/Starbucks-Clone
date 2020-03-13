@@ -8,12 +8,30 @@
 
 import UIKit
 
+struct GiftItem {
+    let title: String
+    let subtitle: String
+    let price: Int
+}
+
 class GiftItemDetailViewController: UIViewController {
     
+    var data = GiftItem(title: "카페 아메리카노", subtitle: "카페 아메리카노 1잔", price: 4100)
+    
     private let contentsScrollView = UIScrollView()
-    private let itemDetailView = GiftItemDetailView()
+//    private let itemDetailView = GiftItemDetailView()
+    lazy var itemDetailView = GiftItemDetailView(item: data)
     private let spaceLineLabel = UILabel()
     private let suggestionView = GiftDetailSuggestionView()
+    
+    init(data: GiftItem) {
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

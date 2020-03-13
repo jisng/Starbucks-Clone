@@ -9,6 +9,18 @@
 import UIKit
 
 class GiftHomeThemeView: UIView {
+    
+    var themeData = [
+        GiftItem(title: "오후에 녹차 한잔 세트",
+                 subtitle: "머그컵1개, 녹차 티바나 1개",
+                 price: 31000),
+        GiftItem(title: "달콤한 우리 사랑 세트",
+                 subtitle: "시즌 한정 세트",
+                 price: 14600),
+        GiftItem(title: "화이트 데이 캔디 세트",
+                 subtitle: "화이트데이 시즌 한정, 조기 재고 소진될 수 있습니다",
+                 price: 25600)
+    ]
 
    private let titleLabel = UILabel()
     
@@ -42,13 +54,13 @@ class GiftHomeThemeView: UIView {
         
         switch button.currentImage {
         case UIImage(named: "theme1"):
-            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail1" )
+            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail1", data: themeData)
             navi.pushViewController(detailVC, animated: true)
         case UIImage(named: "theme2"):
-            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail2")
+            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail2", data: themeData)
             navi.pushViewController(detailVC, animated: true)
         case UIImage(named: "theme3"):
-            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail3")
+            let detailVC = GiftThemeDetailViewController(imageName: "ThemeDetail3", data: themeData)
             navi.pushViewController(detailVC, animated: true)
         default:
             break
