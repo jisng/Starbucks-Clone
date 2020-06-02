@@ -20,11 +20,10 @@ i10 자체프로젝트: 스타벅스 어플 클론
 - GiftShop
 
   <p>
-  <img src="gif/giftshop1.gif" width="40%">
-  <img src="gif/giftshop2.gif" width="40%">
+    <img src="gif/giftshop1.gif" width="40%">
+    <img src="gif/giftshop2.gif" width="40%">
   </p>
 
-  
 
 - What's New
 #### 희진
