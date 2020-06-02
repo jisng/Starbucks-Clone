@@ -6,25 +6,30 @@ i10 자체프로젝트: 스타벅스 어플 클론
 - [Hailey](https://github.com/foxwavez)
 - [Jingyung](https://github.com/jingyungkim)
 
-## Rule
-- Database: Firebase/Firestore
-- Design Pattern: MVVM
-- (+) Unit Test
-
-## Convention
-- View: 선언 -> 라이프사이클 -> `setUI()` -> `setLayout()`
-- UI Name: ~Label, ~Button
-- Button Function Name: `didTap ~`
-- Setting Fuction Name: `set ~`
+## Code Rule
+- 순서
+  1. Property
+  2. LifeCycle
+  3. set func (`setUI()`, `setLayout()`)
+- UI Naming: `"name"Label`,` "name"Button`
+- Button Function Name: `didTap"name"Button()`
+- Setting Fuction Name: `setLayout()`
 
 ## Task
 #### 지승
-- 기프트샵
+- GiftShop
+
+  <p>
+    <img src="gif/GiftShop" width="40%">
+  </p>
+
+  
+
 - What's New
 #### 희진
-- 메인
-- 레벨
-- 카드
+- Main
+- User Rewards
+- User Card
 #### 진경
-- 사이렌 오더
+- Siren Order
 - e-Coupon
